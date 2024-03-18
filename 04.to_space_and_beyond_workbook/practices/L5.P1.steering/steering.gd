@@ -12,10 +12,12 @@ func _process(delta: float) -> void:
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()
-
-	# Add code to calculate the desired velocity, the steering,
-	# and add to the current velocity before changing the position.
+	
+	var desired_velocity := max_speed * direction
+	var steering_vector := desired_velocity - velocity
+	velocity += steering_factor * steering_vector * delta
 	position += velocity * delta
+	
 
 	if direction.length() > 0.0:
 		rotation = velocity.angle()

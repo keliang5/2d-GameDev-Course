@@ -19,7 +19,9 @@ func _process(delta: float) -> void:
 		max_speed = boost_speed
 		get_node("Timer").start()
 		
-
+	var desired_velocity := max_speed * direction
+	var steeering_vector := desired_velocity - velocity
+	
 	velocity = direction * max_speed
 	position += velocity * delta
 	if direction.length() > 0.0:
