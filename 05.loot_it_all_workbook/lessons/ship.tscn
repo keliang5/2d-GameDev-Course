@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dgf54k70yiiff" path="res://assets/ship_visual_effects/main_thruster/main_thruster.tscn" id="5_q7c3l"]
 [ext_resource type="PackedScene" uid="uid://bklom8bhpxg4h" path="res://assets/ship_visual_effects/side_thruster/side_thruster.tscn" id="6_1updt"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ven7h"]
+radius = 44.0114
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmqb7"]
 bg_color = Color(0.623529, 0.866667, 0.317647, 1)
 corner_radius_top_left = 4
@@ -12,27 +15,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ven7h"]
-radius = 44.0114
-
 [node name="Ship" type="Area2D"]
 script = ExtResource("4_p1sls")
-
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HealthBar" type="ProgressBar" parent="UI"]
-layout_mode = 0
-offset_left = -77.0
-offset_top = -64.0
-offset_right = 77.0
-offset_bottom = -54.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_kmqb7")
-value = 40.0
-show_percentage = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -2.04636e-12)
@@ -52,3 +36,19 @@ rotation = 1.36715
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ven7h")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="ProgressBar" parent="UI"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -64.0
+offset_right = 77.0
+offset_bottom = -54.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_kmqb7")
+value = 40.0
+show_percentage = false
