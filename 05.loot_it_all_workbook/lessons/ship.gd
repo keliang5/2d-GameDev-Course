@@ -11,6 +11,8 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	
 	set_health(health)
+	
+	
 
 func set_health(new_health: int) -> void:
 	health = new_health
