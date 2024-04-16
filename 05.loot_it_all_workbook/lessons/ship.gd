@@ -31,6 +31,10 @@ func _process(delta: float) -> void:
 	
 	if velocity.length() > 0.0:
 		get_node("Sprite2D").rotation = velocity.angle()
+		
+	var viewport_size := get_viewport_rect().size
+	position.x = wrapf(position.x, 0, viewport_size.x)
+	position.y = wrapf(position.y, 0, viewport_size.y)
 	
 func _on_area_entered(area_that_entered: Area2D) -> void:
 	if area_that_entered.is_in_group("gem"):
