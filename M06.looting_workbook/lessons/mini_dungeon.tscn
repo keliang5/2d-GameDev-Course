@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cit7gnkdckyux"]
+[gd_scene load_steps=13 format=3 uid="uid://cit7gnkdckyux"]
 
 [ext_resource type="Texture2D" uid="uid://114x1a0rmx4l" path="res://assets/dungeon/smooth_dungeon_tileset.png" id="1_sym7n"]
 [ext_resource type="Texture2D" uid="uid://cae527caaj50v" path="res://assets/dungeon/shadow_map.png" id="2_jthdw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://l0y1k1obencd" path="res://assets/dungeon/spider_web.png" id="5_ywba7"]
 [ext_resource type="PackedScene" uid="uid://eundh35r605v" path="res://assets/torch/torch.tscn" id="6_fokey"]
 [ext_resource type="PackedScene" uid="uid://dvar8ktg08lpx" path="res://lessons/chest/chest.tscn" id="7_6ry3w"]
+[ext_resource type="PackedScene" uid="uid://i264tciygu38" path="res://assets/bird/sparrow.tscn" id="8_tbjqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s4s5"]
 texture = ExtResource("1_sym7n")
@@ -331,3 +332,12 @@ position = Vector2(432, 385)
 
 [node name="Chest3" parent="." instance=ExtResource("7_6ry3w")]
 position = Vector2(741, 447)
+
+[node name="Sparrow" parent="." instance=ExtResource("8_tbjqv")]
+position = Vector2(389, 253)
+
+[node name="Sparrow2" parent="." instance=ExtResource("8_tbjqv")]
+position = Vector2(752, 277)
+
+[node name="Sparrow3" parent="." instance=ExtResource("8_tbjqv")]
+position = Vector2(728, -44)

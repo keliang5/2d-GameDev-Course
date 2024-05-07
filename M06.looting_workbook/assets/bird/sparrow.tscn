@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://i264tciygu38"]
+
+[ext_resource type="Script" path="res://Sparrow.gd" id="1_y3iak"]
+[ext_resource type="PackedScene" uid="uid://dnetm54guji21" path="res://assets/bird/shadow.tscn" id="2_eih2q"]
+[ext_resource type="Texture2D" uid="uid://bwhshkk62k3bh" path="res://assets/bird/sparrow.png" id="3_w3wsr"]
+
+[node name="Sparrow" type="Node2D"]
+script = ExtResource("1_y3iak")
+
+[node name="Shadow" parent="." instance=ExtResource("2_eih2q")]
+position = Vector2(0, 2.1875)
+scale = Vector2(1.5625, 1.11328)
+
+[node name="Sparrow" type="Sprite2D" parent="."]
+position = Vector2(6, -19)
+texture = ExtResource("3_w3wsr")
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true

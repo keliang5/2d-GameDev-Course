@@ -18,4 +18,16 @@ func play_floating_animation() -> void:
 	tween.tween_property(sprite_2d, "position", position_offset, duration)
 	tween.tween_property(sprite_2d, "position",  -1.0 * position_offset, duration)
 
+func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
+	var event_mouse_is_click: bool = (
+		event is InputEventMouseButton and 
+		event.button_index == MOUSE_BUTTON_LEFT and 
+		event.is_pressed()
+	)
+	if event_mouse_is_click:
+		var tween := create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(self, "scale", Vector2(0.0,0.0), .3)
+		tween.finished.connect(queue_free)
+	
 
