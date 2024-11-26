@@ -67,7 +67,7 @@ var dialogue_items: Array[Dictionary] = [
 
 
 func _ready() -> void:
-	show_text(1)
+	show_text(0)
 
 
 
