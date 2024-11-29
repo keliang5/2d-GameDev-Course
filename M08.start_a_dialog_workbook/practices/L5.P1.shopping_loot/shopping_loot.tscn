@@ -1,18 +1,43 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://h2osp74acgxr"]
 
-[ext_resource type="Material" path="res://assets/practice_background_material.tres" id="1_e0ra5"]
+[ext_resource type="Material" uid="uid://dxrtaju87p2an" path="res://assets/practice_background_material.tres" id="1_e0ra5"]
 [ext_resource type="Script" path="res://practices/L5.P1.shopping_loot/shopping_loot.gd" id="2_7stto"]
 [ext_resource type="Script" path="res://practices/L5.P1.shopping_loot/shopping_entry.gd" id="3_1vcjn"]
-[ext_resource type="Theme" path="res://assets/practices/practices_theme.tres" id="4_m4f0j"]
+[ext_resource type="Theme" uid="uid://qk3rjf73qo8w" path="res://assets/practices/practices_theme.tres" id="4_m4f0j"]
+[ext_resource type="Texture2D" uid="uid://qclkhtefwoek" path="res://assets/practices/torch.svg" id="4_pxgrd"]
+[ext_resource type="Texture2D" uid="uid://bnpc28bwgthih" path="res://assets/practices/shrimp.svg" id="5_3weip"]
+[ext_resource type="Texture2D" uid="uid://cmql810anba03" path="res://assets/practices/sword.svg" id="6_wsw2w"]
+
+[sub_resource type="Resource" id="Resource_qhjy4"]
+script = ExtResource("3_1vcjn")
+text = "Torch"
+amount = 1
+price = 5
+texture = ExtResource("4_pxgrd")
+
+[sub_resource type="Resource" id="Resource_i3fgi"]
+script = ExtResource("3_1vcjn")
+text = "Shrimp"
+amount = 1
+price = 2
+texture = ExtResource("5_3weip")
+
+[sub_resource type="Resource" id="Resource_8wsjd"]
+script = ExtResource("3_1vcjn")
+text = "Sword"
+amount = 1
+price = 10
+texture = ExtResource("6_wsw2w")
 
 [node name="ShoppingLoot" type="ColorRect"]
 material = ExtResource("1_e0ra5")
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_7stto")
-items_list = Array[ExtResource("3_1vcjn")]([])
+items_list = Array[ExtResource("3_1vcjn")]([SubResource("Resource_qhjy4"), SubResource("Resource_i3fgi"), SubResource("Resource_8wsjd")])
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1

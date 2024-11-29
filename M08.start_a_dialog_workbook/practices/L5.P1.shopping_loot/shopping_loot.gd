@@ -10,13 +10,14 @@ var tween: Tween
 @export var items_list: Array[ShoppingEntry] = []
 
 func _ready() -> void:
-	display_item("purse")
+	display_item("")
 	for item in items_list:
 		var button := InventorySlotButton.new()
 		grid_container.add_child(button)
-		# Set the button's properties: text, amount, and price from the item.
-		# Warning! You will get an error here if you didn't set up the
-		# ShoppingEntry resource before.
+		button.text = item.text
+		button.amount = item.amount
+		button.price = item.price
+		button.texture = item.texture
 		button.pressed.connect(display_item.bind(button.text))
 
 
