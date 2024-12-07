@@ -8,6 +8,7 @@ radius = 23.0
 
 [node name="Runner" type="CharacterBody2D"]
 position = Vector2(485, 268)
+motion_mode = 1
 script = ExtResource("1_x8ebg")
 
 [node name="Skin" type="Sprite2D" parent="."]
