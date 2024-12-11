@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c244ig7u0vs4r"]
+
+[ext_resource type="PackedScene" uid="uid://cbaqhq5orr2ap" path="res://runner.tscn" id="1_wh7ow"]
+[ext_resource type="PackedScene" uid="uid://caog1qvhobqlt" path="res://simple_obstacle.tscn" id="2_ftdm6"]
+[ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="3_4a5dd"]
+[ext_resource type="PackedScene" uid="uid://ybdg48vswryt" path="res://circuit.tscn" id="4_f2oox"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+
+[node name="CircuitBG" type="Sprite2D" parent="."]
+z_index = -7
+texture = ExtResource("3_4a5dd")
+
+[node name="Runner" parent="." instance=ExtResource("1_wh7ow")]
+position = Vector2(-691, -847)
+
+[node name="SimpleObstacle" parent="." instance=ExtResource("2_ftdm6")]
+position = Vector2(1285, -230)
+
+[node name="SimpleObstacle3" parent="." instance=ExtResource("2_ftdm6")]
+position = Vector2(-41, -842)
+
+[node name="SimpleObstacle4" parent="." instance=ExtResource("2_ftdm6")]
+position = Vector2(-478, -944)
+
+[node name="SimpleObstacle2" parent="." instance=ExtResource("2_ftdm6")]
+position = Vector2(912, -691)
+
+[node name="Circuit" parent="." instance=ExtResource("4_f2oox")]
