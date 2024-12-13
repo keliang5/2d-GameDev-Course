@@ -1,7 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbaqhq5orr2ap"]
+[gd_scene load_steps=8 format=3 uid="uid://cbaqhq5orr2ap"]
 
 [ext_resource type="Script" path="res://runner.gd" id="1_x8ebg"]
+[ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="2_eq38d"]
 [ext_resource type="PackedScene" uid="uid://bm8s1oaoxngwq" path="res://assets/runner/runner_visual_red.tscn" id="2_li2qb"]
+[ext_resource type="Shader" path="res://assets/character_contour.gdshader" id="4_myksl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxl8f"]
+shader = ExtResource("4_myksl")
+shader_parameter/viewport_scale = Vector2(1, 1)
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 4.0
+shader_parameter/waves_height = 0.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_21uck"]
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2u0fv"]
 radius = 25.0
@@ -11,12 +23,28 @@ position = Vector2(485, 268)
 motion_mode = 1
 script = ExtResource("1_x8ebg")
 
-[node name="RunnerVisualRed" parent="." instance=ExtResource("2_li2qb")]
-unique_name_in_owner = true
-scale = Vector2(0.5, 0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -13)
-shape = SubResource("CircleShape2D_2u0fv")
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.156863)
+position = Vector2(2.92063e-06, -6.80822)
+scale = Vector2(0.5625, 0.787243)
+texture = ExtResource("2_eq38d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(124, 150)
+
+[node name="RunnerVisualRed" parent="SubViewport" instance=ExtResource("2_li2qb")]
+unique_name_in_owner = true
+position = Vector2(62, 120)
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bxl8f")
+texture = SubResource("ViewportTexture_21uck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 34)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_2u0fv")
