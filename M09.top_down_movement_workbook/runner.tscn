@@ -46,5 +46,4 @@ texture = SubResource("ViewportTexture_21uck")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 34)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_2u0fv")
