@@ -25,8 +25,8 @@ script = ExtResource("1_x8ebg")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.156863)
-position = Vector2(2.92063e-06, -6.80822)
-scale = Vector2(0.5625, 0.787243)
+position = Vector2(0.999996, 54)
+scale = Vector2(0.593749, 0.577)
 texture = ExtResource("2_eq38d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
