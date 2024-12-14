@@ -15,7 +15,7 @@ texture = ExtResource("3_4a5dd")
 [node name="Runner" parent="." instance=ExtResource("1_wh7ow")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(-691, -847)
+position = Vector2(-673, -848)
 
 [node name="SimpleObstacle" parent="." instance=ExtResource("2_ftdm6")]
 position = Vector2(1285, -230)
