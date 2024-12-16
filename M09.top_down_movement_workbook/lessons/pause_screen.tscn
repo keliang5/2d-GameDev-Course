@@ -6,12 +6,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_70pou"]
 shader = ExtResource("2_f4n3f")
-shader_parameter/blur_amount = 1.5
+shader_parameter/blur_amount = 0.0
 shader_parameter/tint = null
-shader_parameter/tint_strength = 0.2
-shader_parameter/saturation = 0.3
+shader_parameter/tint_strength = 0.0
+shader_parameter/saturation = 1.0
 
 [node name="PauseScreen" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,11 +64,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ResumeButton" type="Button" parent="UIPanelContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Resume
 "
 
 [node name="QuitButton" type="Button" parent="UIPanelContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Quit
 "
