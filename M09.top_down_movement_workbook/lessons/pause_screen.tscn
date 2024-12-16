@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuvyg5mds8mk"]
+
+[ext_resource type="Theme" uid="uid://cex15tcav7we4" path="res://assets/pause_screen_theme.tres" id="1_o6jcw"]
+[ext_resource type="Script" path="res://pause_screen.gd" id="2_2laca"]
+[ext_resource type="Shader" path="res://assets/blur.gdshader" id="2_f4n3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_70pou"]
+shader = ExtResource("2_f4n3f")
+shader_parameter/blur_amount = 1.5
+shader_parameter/tint = null
+shader_parameter/tint_strength = 0.2
+shader_parameter/saturation = 0.3
+
+[node name="PauseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_o6jcw")
+script = ExtResource("2_2laca")
+
+[node name="BlurColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_70pou")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UIPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -342.0
+offset_top = -294.0
+offset_right = 240.0
+offset_bottom = 245.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIPanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UIPanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="UIPanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume
+"
+
+[node name="QuitButton" type="Button" parent="UIPanelContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"

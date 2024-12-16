@@ -100,3 +100,5 @@ func stop_counting() -> void:
 	text = ""
 	# Ensure the countdown is invisible
 	visible = false
+	
+	#gbbs
