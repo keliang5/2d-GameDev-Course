@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkrkw4ony0xrp"]
+
+[ext_resource type="PackedScene" path="res://simple_obstacle.tscn" id="1_e8r4w"]
+[ext_resource type="Script" path="res://lessons/ray_cast_2d.gd" id="2_70f21"]
+
+[node name="RaycastTest" type="Node2D"]
+
+[node name="SimpleObstacle" parent="." instance=ExtResource("1_e8r4w")]
+position = Vector2(200, -1)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(1, 1)
+target_position = Vector2(120, 0)
+script = ExtResource("2_70f21")

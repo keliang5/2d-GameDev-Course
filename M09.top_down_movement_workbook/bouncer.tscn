@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d22mjypmwebw"]
+[gd_scene load_steps=15 format=3 uid="uid://ctpua4wy5euw6"]
 
 [ext_resource type="Script" path="res://lessons/bouncer.gd" id="1_1fjgm"]
 [ext_resource type="Texture2D" uid="uid://bkq3gfbp5fwqx" path="res://assets/circle_64x64.png" id="2_8oj13"]

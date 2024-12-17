@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbaqhq5orr2ap"]
+[gd_scene load_steps=14 format=3 uid="uid://c27qrbrb0uib6"]
 
 [ext_resource type="Script" path="res://runner.gd" id="1_x8ebg"]
 [ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="2_eq38d"]
